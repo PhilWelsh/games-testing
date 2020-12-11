@@ -1,0 +1,162 @@
+$blue: #012146;
+$black: #464646;
+$white: #f8f8f8;
+$grey: #7c7c7c;
+$green: #6fa333;
+$grey-light: #b8b8b8;
+$shadow: 0px 0px 4px 0px $grey-light;
+
+@font-face {
+  font-family: MorganPosterAvec;
+  src: url("./MorganPosterAvec\ Regular.otf");
+}
+@font-face {
+  font-family: SFProDisplay;
+  src: url("//db.onlinewebfonts.com/t/70c38766a71f8f7f0a477605da15fcd3.eot");
+  src: url("//db.onlinewebfonts.com/t/70c38766a71f8f7f0a477605da15fcd3.ttf")
+    format("truetype");
+}
+
+body {
+  background: $blue;
+  text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+  font-family: "SFProDisplay";
+  color: $grey;
+  font-weight: 100;
+  font-size: 13px;
+}
+
+h2 {
+  margin: 10px 0;
+  font-size: 36px;
+  color: $black;
+}
+h3 {
+  margin: 5px 0;
+  font-size: 22px;
+}
+hr {
+  width: 240px;
+  margin: 10px auto;
+  color: $grey;
+  opacity: 0.3;
+}
+img,
+hr {
+  max-width: 100%;
+}
+ul {
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+.morganfont {
+  font-family: "MorganPosterAvec";
+}
+.to-upper {
+  text-transform: uppercase;
+}
+.button {
+  display: inline-flex;
+  justify-content: space-evenly;
+  margin: 0 10px;
+  padding: 6px;
+  background: white;
+  min-width: 120px;
+  border-radius: 25px;
+  box-shadow: $shadow;
+  font-weight: bold;
+  text-transform: uppercase;
+  &:hover {
+    background: $green;
+    color: $white;
+  }
+  span {
+    margin: 5px 10px;
+    vertical-align: middle;
+  }
+}
+.logo {
+  margin: 30px auto;
+}
+.footer-nav {
+  margin: 30px auto;
+  li {
+    display: inline-block;
+    padding: 0 8px;
+    border-right: 1px solid $grey;
+    margin-bottom: 5px;
+    a {
+      color: $grey;
+      font-weight: normal;
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+  li:last-of-type {
+    border-right: none;
+  }
+}
+.play-window {
+  background: $white;
+  border-radius: 20px;
+  padding: 20px;
+}
+.player {
+  display: inline-block;
+  font-size: 11px;
+  img {
+    width: 50px;
+    border-radius: 50%;
+    margin-left: -5px;
+    margin-right: -5px;
+    border: 2px solid white;
+    background: $white;
+  }
+}
+.points-bubble {
+  width: 20px;
+  color: $black;
+  padding: 5px;
+  margin: 5px auto;
+  border-radius: 50%;
+  box-shadow: $shadow;
+  font-size: 16px;
+  font-weight: bold;
+}
+.action-buttons {
+  margin: 20px 0;
+  .button {
+    margin-bottom: 10px;
+  }
+}
+.app-download {
+  font-weight: bold;
+  #message {
+    margin-bottom: 20px;
+  }
+}
+.app-button {
+  background: #383737;
+  border-radius: 4px;
+  display: inline-flex;
+  justify-content: space-evenly;
+  margin: 0 10px;
+}
+
+.loading-bar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  height: 30px;
+  background: $white;
+  box-shadow: $shadow;
+  border-radius: 30px;
+  margin: auto;
+}

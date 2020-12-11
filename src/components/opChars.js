@@ -605,3 +605,5 @@ export const opChars = [
     laugh: "Gagagaga",
   },
 ];
+
+//Thanks to Listfist.com and https://listfist.com/list-of-one-piece-characters-by-laugh as well as the One Piece 'smile' art exhibition at Tokyo Tower for these resources and inspiration, as well as the main man Oda for all the years of One Piece

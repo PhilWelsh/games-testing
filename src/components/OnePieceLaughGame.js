@@ -1,6 +1,8 @@
 import { opChars } from "./opChars";
 import styled from "@emotion/styled";
 
+import Flippy, { FrontSide, BackSide } from "react-flippy";
+
 // let SomeComponent = props => {
 //   return (
 //     <div
@@ -19,7 +21,61 @@ const Tiles = ({ className }) => {
     <ul className={className}>
       {" "}
       {opChars.map((char) => {
-        return <StyledTilesTile>{char.laugh}</StyledTilesTile>;
+        return (
+          <StyledTilesTile>
+            <Flippy
+              flipOnHover={false}
+              flipOnClick={true}
+              style={{ height: "100%", borderRadius: 7, overFlow: "hidden" }}
+            >
+              <FrontSide
+                style={{
+                  backgroundImage: `url(https://res.cloudinary.com/philwelsh/image/upload/v1607661143/projects/onepiece-game/onepiece-card-back_xapfp6.jpg)`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center center",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  padding: 0,
+                }}
+              >
+                <span
+                  style={{
+                    lineBreak: "anywhere",
+                    padding: 5,
+                    background: "#ffffffd9",
+                    color: "black",
+                    fontWeight: "bold",
+                    transform: "rotate(-0)",
+                  }}
+                >
+                  {char.laugh}
+                </span>
+              </FrontSide>
+              <BackSide
+                style={{
+                  backgroundImage: `url(${char.charImg})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center center",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-end",
+                }}
+              >
+                <span
+                  style={{
+                    padding: 5,
+                    background: "#ffffff80",
+                    color: "black",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {char.name}
+                </span>
+              </BackSide>
+            </Flippy>
+          </StyledTilesTile>
+        );
       })}
     </ul>
   );
@@ -44,13 +100,6 @@ const StyledTilesTile = styled.li`
   padding: 0;
   list-style: none;
   /*start*/
-  background: white;
-  border-radius: 3px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  line-break: anywhere;
 `;
 
 const OnePieceLaughGame = () => {

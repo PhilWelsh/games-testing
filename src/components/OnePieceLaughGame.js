@@ -1,12 +1,8 @@
-import { createContext, useContext, useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { opChars } from "./opChars";
 import styled from "@emotion/styled";
 
 import Flippy, { FrontSide, BackSide } from "react-flippy";
-import { isCompositeComponent } from "react-dom/test-utils";
-
-const AllFlippedContext = createContext({});
-const AllFlippedProvider = AllFlippedContext.Provider;
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -20,6 +16,8 @@ function shuffle(array) {
 
 // * ADD FLIP ALL BUTTON
 // * CASCADE ANIMATIONS FROM FLIP ALL
+
+// * SHUFFLE ALL CARDS
 
 // CASCADE ANIMATIONS TO FLIP ENTER
 // LAZYLOAD
@@ -54,13 +52,14 @@ const Tiles = ({ className }) => {
       }
     }
   };
-  const originalShuffle = shuffle(opChars);
-  const [shuffledOpChars, setShuffledOpChars] = useState(originalShuffle);
-  function handleShuffle() {
-    return setShuffledOpChars(shuffle(opChars));
+  const [counter, setCounter] = useState(0);
+  function handleReload() {
+    setCounter(counter + 1);
   }
+
   const ShuffledTiles = () => {
-    return shuffledOpChars.map((char) => {
+    console.log(counter);
+    return shuffle(opChars).map((char) => {
       return (
         <StyledTilesTile>
           <Flippy
@@ -126,7 +125,7 @@ const Tiles = ({ className }) => {
       <button onClick={() => handleFlipAll(false)} label="hide all">
         Hide All
       </button>
-      <button onClick={handleShuffle} label="shuffle all">
+      <button onClick={handleReload} label="shuffle all">
         Shuffle Characters
       </button>
       <ul className={className} ref={flipContainerRef}>

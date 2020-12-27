@@ -38,11 +38,15 @@ const alphabet = [
   "z",
 ];
 
-// INCORRECT LETTERS TRIED
-// count
-// which
+//TODO
+// show incorrect letters tried
+// count "
+//Limit number of tries
 
-// UI OF WORD
+// UI IMPROVEMENT
+
+// victory message
+//
 
 const WordGame = () => {
   const [lettersTried, setLettersTried] = useState([""]);

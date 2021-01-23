@@ -8,7 +8,8 @@ function App() {
   return (
     <div className="App">
       <Container>
-        <OnePieceLaughGame />
+        {/* <OnePieceLaughGame /> */}
+        <WordGame />
       </Container>
     </div>
   );
